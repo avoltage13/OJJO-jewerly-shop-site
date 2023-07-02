@@ -135,8 +135,13 @@ gallery.forEach(pic => {
 //Modal-windows
 
 const popupBody = document.getElementById('popup-body');
-const popup1 = [document.getElementById('popup1'), document.getElementById('popup1-close'), document.getElementById('popup1-open'), document.getElementById('popup1-side-open')];
+const popup1 = [document.getElementById('popup1'), document.getElementById('popup1-close'), document.getElementById('popup1-open'), document.getElementById('popup1-side-open'), document.getElementById('popup1-side-open-dub'), document.getElementById('popup1-head-open')];
 const popup2 = [document.getElementById('popup2'), document.getElementById('popup2-close'), document.getElementById('popup2-open'), document.getElementById('popup2-side-open')];
+
+popup1[1].addEventListener('click', function() {
+    popupBody.classList.toggle('popup--opend');
+    popup1[0].classList.toggle('popup__body--opend');
+});
 
 popup1[2].addEventListener('click', function() {
     popupBody.classList.toggle('popup--opend');
@@ -148,9 +153,19 @@ popup1[3].addEventListener('click', function() {
     popup1[0].classList.toggle('popup__body--opend');
 });
 
-popup1[1].addEventListener('click', function() {
+popup1[4].addEventListener('click', function() {
     popupBody.classList.toggle('popup--opend');
     popup1[0].classList.toggle('popup__body--opend');
+});
+
+popup1[5].addEventListener('click', function() {
+    popupBody.classList.toggle('popup--opend');
+    popup1[0].classList.toggle('popup__body--opend');
+});
+
+popup2[1].addEventListener('click', function() {
+    popupBody.classList.toggle('popup--opend');
+    popup2[0].classList.toggle('popup__body--opend');
 });
 
 popup2[2].addEventListener('click', function() {
@@ -159,11 +174,6 @@ popup2[2].addEventListener('click', function() {
 });
 
 popup2[3].addEventListener('click', function() {
-    popupBody.classList.toggle('popup--opend');
-    popup2[0].classList.toggle('popup__body--opend');
-});
-
-popup2[1].addEventListener('click', function() {
     popupBody.classList.toggle('popup--opend');
     popup2[0].classList.toggle('popup__body--opend');
 });
