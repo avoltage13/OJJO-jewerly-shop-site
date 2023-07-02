@@ -172,6 +172,10 @@ a:active {
   outline: none;
 }
 
+address {
+  font-style: normal;
+}
+
 nav,
 footer,
 header,
