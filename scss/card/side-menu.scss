@@ -1,0 +1,291 @@
+// REM
+@function rem($value) {
+    $remValue: calc($value / 16) + rem;
+    @return $remValue;
+}
+// EM
+@function em($value) {
+    $emValue: calc($value / 16) + em;
+    @return $emValue;
+}
+// REM+EM w/0 rem,em
+@function rem-alt($value) {
+    $rem0Value: calc($value / 16);
+    @return $rem0Value;
+}
+
+// Adaptiv
+$maxWidth: 1920;
+$maxWidthContainer: 1110;
+$maxWidthRem: 120;
+$maxWidthContainerRem: 69.375;
+
+@mixin av($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+
+    @if $type==1 {
+    // Только если меньше контейнера
+    #{$property}: $startSize + px;
+
+    @media (max-width: #{$maxWidthContainer + px}) {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+    }
+}
+
+    @else if $type==2 {
+    // Только если больше контейнера
+    #{$property}: $startSize + px;
+
+    @media (min-width: #{$maxWidthContainer + px}) {
+    #{$property}: calc(#{$minSize + px} #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+}
+
+    @else if $type==1r {
+    // Только если меньше контейнера
+    #{$property}: $startSize + rem;
+
+    @media (max-width: #{$maxWidthContainer + px}) {
+    #{$property}: calc(#{$minSize + rem} + #{$addSize} * ((100vw - 20rem) / #{$maxWidthContainerRem - 20}));
+    }
+}
+
+    @else if $type==2r {
+    // Только если больше контейнера
+    #{$property}: $startSize + rem;
+
+    @media (min-width: #{$maxWidthContainer + px}) {
+    #{$property}: calc(#{$minSize + rem} #{$addSize} * ((100vw - 20rem) / #{$maxWidthRem - 20}));
+    }
+}
+
+    @else {
+    // Всегда
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+}
+/*______________SIDE MENU STYLE______________*/
+.side__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 100%;
+    z-index: 30;
+    transition: 300ms ease-in-out;
+    &--opend {
+        pointer-events: auto;
+        overflow-y: scroll;
+        right: 0;
+        }
+}
+@media(max-width: 767px) {
+    .side__menu {
+        width: 100%;
+    }
+}
+.side__body {
+    background-color: #333333;
+    padding: 35px;
+    height: 100vh;
+}
+.side__content{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.side__head {
+    padding: 0 0 10px 0;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.side__logo {
+    height: 52px;
+    width: 216px;
+    background: url(../img/icons/main-logo.svg) 50% no-repeat;
+}
+.side__button-wrap {
+    position: fixed;
+    top: 35px;
+    right: 35px;
+    height: 50px;
+    width: 50px;
+    z-index: 50;
+}
+.menu__button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    z-index: 60;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: -3px;
+        left: 1px;
+        background-color: #33333334;
+        border-radius: 10px;
+    }
+    &--opend {
+        pointer-events: none;
+        }
+}
+.close__button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    pointer-events: none;
+    z-index: 65;
+    &--opend {
+        pointer-events: auto;
+        }
+}
+
+@media (max-width: 374px) {
+    .side__button-wrap {
+        top: 35px;
+        right: 15px;
+    }
+}
+.decor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 9px;
+    padding: 10px 8px 10px 9px;
+    pointer-events: none;
+}
+.decor__line {
+        border: solid 2px #ffffff;
+        border-radius: 3px;
+        z-index: 70;
+}
+.first-line {
+    transition: transform 300ms ease-in-out;
+    transform: translate(0,-3px) rotate(0);
+    &--close {
+        transform: translate(0,13px) rotate(45deg);
+        }
+}
+.mid-line {
+    width: 65%;
+    transition: transform 400ms ease-in-out, opacity 500ms ease;
+    opacity: 1;
+    transform: translate(0,-3px);
+    &--close {
+        transform: translateX(-200px);
+        opacity: 0;
+        }
+}
+.last-line {
+    transition: transform 300ms ease-in-out;
+    transform: translate(0,-4px) rotate(0);
+    &--close {
+        transform: translate(0,-13px) rotate(-45deg);
+        }
+}
+@media (min-width: 921px) {
+    .menu__button, .close__button, .side__menu {
+        display: none;
+    }
+}
+
+.side__nav { 
+    border-bottom: 1.5px solid rgb(255, 255, 255);
+}
+.side__items {
+    padding-bottom: 33px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: rem(21);
+    line-height: 1.4;
+    white-space: nowrap;
+}
+.side__item {
+}
+.side__link {
+    color: white;
+}
+.side__actions {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: -25px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid white;
+    .icon-man::before {
+        font-size: 50px;
+    }
+    .icon-heart::before {
+        font-size: 33px;
+    }
+}
+.user__button {
+    height: 50px;
+    width: 50px;
+}
+.favorites__button {
+    height: 50px;
+    width: 50px;
+    margin-left: -0.5px;
+    margin-top: 2px;
+}
+.side__social {
+    margin-top: -25px;
+}
+.side__social-items {
+    display: flex;
+    flex-direction: row;
+    gap: 29px;
+    [class$="-link"] {
+        height: 40px;
+        width: 40px;
+    }
+}
+.side__social-item {
+    position: relative;
+    .icon-youtube:before {
+        font-size: 38px;
+    }
+    .icon-vk:before {
+        font-size: 37px;
+    }
+    .icon-facebook:before {
+        font-size: 36px;
+    }
+    .icon-telegram:before {
+        font-size: 36px;
+    }
+    .e__link {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .icon-etsy:before {
+        font-size: 24px;
+        position: absolute;
+        top: 7px;
+        left: 5px;
+    }
+    a {
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+}
+@media (max-width: 374px) {
+    .side__body {
+        padding: 20px;
+    }
+    .side__social-items {
+        gap: 20px;
+    }
+}

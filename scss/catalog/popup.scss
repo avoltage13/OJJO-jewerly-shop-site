@@ -1,0 +1,165 @@
+/*______________POPUP STYLE______________*/
+.popup {
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #333333cb;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 500ms ease, background 500ms ease;
+    &--opend {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+    }
+}
+.popup__body {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    z-index: 101;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    &--opend {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+    }
+}
+.userform__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #adadad;
+    border-radius: 20px;
+    box-shadow: 0px 0px 1000px 10px #8d8d8d59 inset;
+    padding: 35px 15px;
+    .reg-btn {
+        color: blue;
+    }
+}
+.popup__close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    background-color: #ffffff00;
+    border-radius: 10px;
+    img, picture {
+        object-fit: contain;
+    }
+}
+@media (hover: hover) {
+    .popup__close:hover {
+        background-color: #e6e6e679;
+        box-shadow: 0px 0px 20px 10px #dddddd8c inset;
+    }
+}
+.userform__title {
+    font-size: rem(28);
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+.userform__text {
+    font-size: rem(16);
+    padding-bottom: 10px;
+}
+.userform__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: rem(20);
+    padding-bottom: 20px;
+    & > * {
+        margin-bottom: 15px;
+    }
+}
+.username__area {
+    font-size: rem(18);
+    width: 200px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    background: #868686;
+    color: wheat;
+    transition: all 400ms ease 0ms;
+    &:focus {
+        background: #adadad;
+        box-shadow: 0px 0px 30px 10px #3a3a3acb inset;
+    }
+}
+.pass__area {
+    font-size: rem(18);
+    width: 200px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    background: #868686;
+    color: wheat;
+    transition: all 400ms ease 0ms;
+    &:focus {
+        background: #adadad;
+        box-shadow: 0px 0px 30px 10px #3a3a3acb inset;
+    }
+}
+.login__button {
+    margin-top: 30px;
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    font-size: rem(18);
+    font-style: Medium;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: rem(1.8);
+    border: 1px solid white;
+    color: #000000;
+}
+@media (hover: hover) {
+    .login__button {
+        &:hover {
+            transition: all 300ms ease 0ms;
+            background-color: #afafaf;
+            color: rgb(212, 212, 212);
+            box-shadow: 0px 0px 50px 5px #5e5e5ed8 inset;
+            border-color: #777777;
+        }
+    }
+}
+@media (pointer: coarse) {
+    .login__button {
+        transition: all 200ms ease 0ms;
+        &:active {
+            background-color: #ffffff70;
+            color: rgb(27, 27, 27);
+        }
+    }
+}
+.empty__window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    min-width: 250px;
+    min-height: 250px;
+}
