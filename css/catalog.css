@@ -47,7 +47,6 @@
   line-height: 1.5;
   border-bottom: 1px solid #d6d6d6;
   padding-bottom: 9px;
-  z-index: 3;
 }
 
 .products__sort-label-triangle {
@@ -59,7 +58,6 @@
   border-top: 8px solid #000;
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
-  z-index: 3;
 }
 
 .products__sort-list {
@@ -156,12 +154,19 @@
 }
 
 .product__item-pic-wrap {
-  width: 280px;
+  height: 280px;
   height: 220px;
   margin-bottom: 25px;
 }
 
-.product__item-pic-wrap picture {
+.product__item-product-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.product__item-product-link picture,
+.product__item-product-link img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -236,7 +241,7 @@
   width: 100%;
   bottom: 49px;
   left: 0;
-  border-top: 5px solid #f9f9f9;
+  border-top: 30px solid #f9f9f9;
   z-index: 3;
   pointer-events: none;
 }
@@ -320,7 +325,8 @@
   height: 133px;
 }
 
-.textblock__pics-wrap picture {
+.textblock__pics-wrap picture,
+.textblock__pics-wrap img {
   width: 70px;
   height: 70px;
   -o-object-fit: contain;
@@ -478,7 +484,7 @@
   }
 
   .product-items {
-    row-gap: calc(80px + 40 * ((100vw - 320px) / 790));
+    row-gap: calc(20px + 100 * ((100vw - 320px) / 790));
   }
 
   .product-items {
@@ -486,7 +492,7 @@
   }
 
   .product__item-pic-wrap {
-    width: calc(136px + 144 * ((100vw - 320px) / 790));
+    height: calc(136px + 144 * ((100vw - 320px) / 790));
   }
 
   .product__item-pic-wrap {
@@ -494,7 +500,7 @@
   }
 
   .product__item-separation-line-1 {
-    bottom: calc(-35px + -26 * ((100vw - 320px) / 790));
+    bottom: calc(-10px + -51 * ((100vw - 320px) / 790));
   }
 
   .product__item-separation-line-1 {
@@ -502,7 +508,7 @@
   }
 
   .product__item-separation-line-2 {
-    bottom: calc(-35px + -26 * ((100vw - 320px) / 790));
+    bottom: calc(-10px + -51 * ((100vw - 320px) / 790));
   }
 
   .product__item-separation-line-2 {
@@ -560,6 +566,7 @@
 
 @media (max-width: 731px) {
   .product__item-pic-wrap {
+    width: 100%;
     margin-bottom: 15px;
   }
 
@@ -608,6 +615,14 @@
     background-color: rgba(158, 158, 158, 0.3294117647);
   }
 
+  .product__item-product-link {
+    transition: all 300ms ease;
+  }
+
+  .product__item-product-link:hover {
+    box-shadow: 0px 0px 13px 4px rgb(99, 99, 99);
+  }
+
   .product__item-buy-button {
     transition: all 300ms ease;
   }
@@ -633,6 +648,14 @@
 }
 
 @media (pointer: coarse) {
+  .product__item-product-link {
+    transition: all 300ms ease;
+  }
+
+  .product__item-product-link:active {
+    transform: scale(0.9);
+  }
+
   .product__item-buy-button {
     transition: all 300ms ease;
   }

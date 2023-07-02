@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230702080944">
+    <link rel="stylesheet" href="css/card.min.css?_v=20230702080944">
+    <title>Карточка товара</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside class="side__menu side">
+    <div class="side__body">
+        <div class="side__content">
+            <div class="side__head">
+                <div class="side__logo"></div>
+            </div>
+            <div class="side__button-wrap">
+                <button type="button" aria-label="Показать/скрыть боковое меню" class="side__menu-button menu__button"></button>
+                <button type="button" aria-label="Показать/скрыть боковое меню" class="side__close-button close__button"></button>
+                <div class="side__menu-button-decor decor">
+                    <div class="side__menu-button-decor-line decor__line first-line"></div>
+                    <div class="side__menu-button-decor-line decor__line mid-line"></div>
+                    <div class="side__menu-button-decor-line decor__line last-line"></div>
+                </div>
+            </div>
+            <nav class="side__nav">
+                <ul class="side__items">
+                    <li class="side__item">
+                        <a href="" class="side__link">Контрагентам</a>
+                    </li>
+                    <li class="side__item">
+                        <a href="" class="side__link">Дизайнерам</a>
+                    </li>
+                    <li class="side__item">
+                        <a href="" class="side__link">Вакансии</a>
+                    </li>
+                    <li class="side__item">
+                        <a href="" class="side__link" id="popup1-side-open-dub">Вход/Регистрация</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="side__actions">
+                <button type="button" aria-label="Перейти к аккаунту" class="side__actions-user-button user__button icon-man" id="popup1-side-open"></button>
+                <button type="button" aria-label="Добавить в  избранное" class="side__actions-favorites-button favorites__button icon-heart" id="popup2-side-open"></button>
+            </nav>
+            <nav class="side__social">
+                <ul class="side__social-items">
+                    <li class="side__social-item">
+                        <a href="" aria-label="Перейти к ютуб-каналу сайта" class="side__social-link youtube__link icon-youtube"></a>
+                    </li>
+                    <li class="side__social-item">
+                        <a href="" aria-label="Перейти к вконтакту" class="side__social-link vk__link icon-vk"></a>
+                    </li>
+                    <li class="side__social-item">
+                        <a href="" aria-label="Перейти к Фейсбуку" class="fside__social-link b__link icon-facebook"></a>
+                    </li>
+                    <li class="side__social-item">
+                        <a href="" aria-label="Перейти к телеграмм" class="side__social-link tg__link icon-telegram"></a>
+                    </li>
+                    <li class="side__social-item">
+                        <a href="" aria-label="Перейти к этси" class="e__liside__social-link nk icon-etsy"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</aside>
+        <div class="popup" id="popup-body">
+    <div class="popup__body user-forms" id="popup1">
+        <div class="userform__content">
+            <button type="button" class="popup__close" id="popup1-close">
+                <picture><source srcset="img/close_icon.webp" type="image/webp"><img src="img/close_icon.png" alt=""></picture>
+            </button>
+            <h2 class="userform__title">Вход на сайт</h2>
+            <div class="userform__text">Модальное окно пустышка</div>
+            <form action="#" method="post" class="userform__form">
+                <label for="username">Логин:</label>
+                <input type="text" id="username" name="username" class="username__area">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" class="pass__area">
+                <input type="submit" value="Вход" class="login__button">
+            </form>
+            <p>Ещё не зарегистрированы? <a href="" class="reg-btn">Регистрация</a></p>
+        </div>
+    </div>
+    <div class="popup__body" id="popup2">
+        <div class="empty__window">Окно-пустышка, контент добавлю позже
+            <button type="button" class="popup__close" id="popup2-close">
+                <picture><source srcset="img/close_icon.webp" type="image/webp"><img src="img/close_icon.png" alt=""></picture>
+            </button>
+        </div>
+    </div>
+</div>
+        <header class="header">
+    <div class="header__container">
+        <div class="header__logo-wrap">
+            <a href="" class="header__logo"></a>
+        </div>
+        <nav class="header__content header__nav">
+            <ul class="content__left header__items">
+                <li class="header__item">
+                    <a href="" class="header__link">Контрагентам</a>
+                </li>
+                <li class="header__item">
+                    <a href="" class="header__link">Дизайнерам</a>
+                </li>
+                <li class="header__item">
+                    <a href="" class="header__link">Вакансии</a>
+                </li>
+            </ul>
+            <ul class="content__right header__items">
+                <li class="header__item">
+                    <button type="button" class="header__button icon-search">Поиск</button>
+                </li>
+                <li class="header__item">
+                    <button type="button" class="header__button" id="popup1-head-open">Вход/Регистрация</button>
+                </li>
+                <li class="header__item">
+                    <button type="button" aria-label="Перейти к аккаунту" class="header__user icon-man" id="popup1-open"></button>
+                </li>
+                <li class="header__item">
+                    <button type="button" aria-label="Добавить в избранное" class="header__favorites icon-heart" id="popup2-open"></button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+            <main class="main">
+        <div class="main__page-location pagelink">
+            <div class="pagelink__container">
+                <div class="pagelink__content">
+                    <span class="pagelink__links"><a href="./index.html" class="pagelink__link">Главная</a>/<a href="./catalog.html" class="pagelink__link">Каталог</a>/<a href="" class="pagelink__link">Категория</a>/<span>Подвеска Dolce & Gabanna</span></span>
+                </div>
+            </div>
+        </div>
+        <section class="main__product-card card">
+            <div class="card__container">
+                <div class="card__photos">
+                    <div class="card__big-picture">
+                        <button type="button" class="card__big-picture-expand-button" id="bigPic">
+                                <picture><source srcset="img/product1.webp" type="image/webp"><img src="img/product1.jpg" alt=""></picture>
+                        </button>
+                    </div>
+                    <div class="card__slider itc-slider" data-slider="itc-slider">
+                        <div class="card__slider-wrap itc-slider-wrapper">
+                            <ul class="card__items itc-slider-items">
+                                <li class="card__item itc-slider-item">
+                                    <button type="button" class="card__item-button" id="cardBtn_1">
+                                        <picture><source srcset="img/product1.webp" type="image/webp"><img src="img/product1.jpg" alt=""></picture>
+                                    </button>
+                                </li>
+                                <li class="card__item itc-slider-item">
+                                    <button type="button" class="card__item-button" id="cardBtn_2">
+                                        <picture><source srcset="img/product1.webp" type="image/webp"><img src="img/product1.jpg" alt=""></picture>
+                                    </button>
+                                </li>
+                                <li class="card__item itc-slider-item">
+                                    <button type="button" class="card__item-button" id="cardBtn_3">
+                                        <picture><source srcset="img/product1.webp" type="image/webp"><img src="img/product1.jpg" alt=""></picture>
+                                    </button>
+                                </li>
+                                <li class="card__item itc-slider-item">
+                                    <button type="button" class="card__item-button" id="cardBtn_4">
+                                        <picture><source srcset="img/cat1.webp" type="image/webp"><img src="img/cat1.jpg" alt=""></picture>
+                                    </button>
+                                </li>
+                                <li class="card__item itc-slider-item">
+                                    <button type="button" class="card__item-button" id="cardBtn_5">
+                                        <picture><source srcset="img/cat2.webp" type="image/webp"><img src="img/cat2.jpg" alt=""></picture>
+                                    </button>
+                                </li>
+                                <li class="card__item itc-slider-item">
+                                    <button type="button" class="card__item-button" id="cardBtn_6">
+                                        <picture><source srcset="img/cheems.webp" type="image/webp"><img src="img/cheems.png" alt=""></picture>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="card-button-prev itc-slider-btn itc-slider-btn-prev"></button>
+                        <button class="card-button-next itc-slider-btn itc-slider-btn-next"></button>
+                        <ol class="card__slider-indicators itc-slider-indicators">
+                            <li class="card__slider-indicator itc-slider-indicator" data-slide-to="0"></li>
+                            <li class="card__slider-indicator itc-slider-indicator" data-slide-to="1"></li>
+                            <li class="card__slider-indicator itc-slider-indicator" data-slide-to="2"></li>
+                            <li class="card__slider-indicator itc-slider-indicator" data-slide-to="3"></li>
+                            <li class="card__slider-indicator itc-slider-indicator" data-slide-to="4"></li>
+                            <li class="card__slider-indicator itc-slider-indicator" data-slide-to="5"></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="card__wrap">
+                    <div class="card__description">
+                        <h2 class="card__title">Подвеска Dolce & Gabanna</h2>
+                        <div class="card__characteristics">
+                            <div>
+                                Категория:<span>Подвески</span>
+                            </div>
+                            <div>
+                                Бренд:<span>Dolce & Gabanna</span>
+                            </div>
+                        </div>
+                        <div class="card__text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate. Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus. Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa.
+                            Vel vel in urna, sodales urna ac sed felis. Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus. 
+                            Et nulla sit convallis orci est, fames sit luctus lacus. 
+                            </div>
+                        <div class="card__price">200 000 $</div>
+                        <div class="card__actions">
+                            <button type="button" class="card__actions-buy">купить</button>
+                            <button type="button" class="card__actions-add-to-cart">добавить в корзину </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="main__textblock textblock">
+            <div class="textblock__container">
+                <div class="textblock__wrap">
+                    <div class="textblock__inner-wrap">
+                        <h2 class="textblock__title">Полное описание товара</h2>
+                        <div class="textblock__text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, lorem eu commodo porttitor erat. Amet mauris cursus bibendum in egestas. Nulla porttitor amet quam elit, mauris. Tortor egestas dignissim augue suspendisse rutrum pretium lobortis dolor. Commodo sagittis at amet faucibus faucibus id. Bibendum placerat convallis gravida eu quisque et augue. Sed dignissim amet ut vitae at ornare sed.
+                            Commodo sagittis at amet faucibus faucibus id. Bibendum placerat convallis gravida eu quisque et augue. Sed dignissim amet ut vitae at ornare sed. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci quam pariatur explicabo est voluptatem nesciunt sequi quos, deserunt doloribus delectus cum. Minima distinctio numquam laudantium fugit facere magni culpa dignissimos sit hic nisi mollitia nam dolorum vitae quis, consequuntur voluptatibus non dolorem nostrum tempora. Veniam temporibus, a, dolores quibusdam eaque sapiente laborum quas rerum mollitia quis natus voluptatibus ab? Veritatis voluptatibus obcaecati animi voluptate modi dolore excepturi optio, asperiores incidunt praesentium aspernatur rem suscipit consequuntur! Sequi adipisci, excepturi at optio assumenda ipsam iste aliquid odio asperiores. Cumque nemo quae earum sint vel obcaecati nostrum nulla, vero, asperiores tempora maiores quisquam.
+                        <div class="textblock__gradient"></div>
+                        <button type="button" class="textblock__expand-button">читать полностью</button>
+                        </div>
+                    </div>
+                    <div class="textblock__pics">
+                        <div class="textblock__pics-wrap">
+                            <picture><source srcset="img/car_pic.webp" type="image/webp"><img src="img/car_pic.png" alt=""></picture>
+                            <div class="textblock__pics-label">Бесплатная доставка</div>
+                        </div>
+                        <div class="textblock__pics-wrap">
+                            <picture><source srcset="img/tablet.webp" type="image/webp"><img src="img/tablet.png" alt=""></picture>
+                            <div class="textblock__pics-label">Индивидуальный дизайн</div>
+                        </div>
+                        <div class="textblock__pics-wrap">
+                            <picture><source srcset="img/ribbon-design.webp" type="image/webp"><img src="img/ribbon-design.png" alt=""></picture>
+                            <div class="textblock__pics-label">Бесплатная примерка</div>
+                        </div>
+                        <div class="textblock__pics-wrap">
+                            <picture><source srcset="img/jewelry.webp" type="image/webp"><img src="img/jewelry.png" alt=""></picture>
+                            <div class="textblock__pics-label">Личный <br>подход</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="main__other-products others">
+            <div class="others__container">
+                <div class="others__upper-text">Мы подготовили для вас кое-что еще</div>
+                <h2 class="others__title">Товары, которые могут Вам понравиться</h2>
+                <div class="others__items">
+                    <article class="others__item">
+                        <div class="others__item-pic-wrap">
+                            <a href="" class="others__item-product-link"><picture><source srcset="img/product1.webp" type="image/webp"><img src="img/product1.jpg" alt=""></picture></a>
+                        </div>
+                        <span class="others__item-upper-text">Подвеска</span>
+                        <h3 class="others__item-title">Dolce & Gabanna</h3>
+                        <button class="others__item-buy-button">175 000 $</button>
+                        <div class="others__item-separation-line-1"></div>
+                    </article>
+                    <article class="others__item">
+                        <div class="others__item-pic-wrap">
+                            <a href="" class="others__item-product-link"><picture><source srcset="img/product1.webp" type="image/webp"><img src="img/product1.jpg" alt=""></picture></a>
+                        </div>
+                        <span class="others__item-upper-text">Подвеска</span>
+                        <h3 class="others__item-title">Dolce & Gabanna</h3>
+                        <button class="others__item-buy-button">175 000 $</button>
+                    </article>
+                    <article class="others__item">
+                        <div class="others__item-pic-wrap">
+                            <a href="" class="others__item-product-link"><picture><source srcset="img/product1.webp" type="image/webp"><img src="img/product1.jpg" alt=""></picture></a>
+                        </div>
+                        <span class="others__item-upper-text">Подвеска</span>
+                        <h3 class="others__item-title">Dolce & Gabanna</h3>
+                        <button class="others__item-buy-button">175 000 $</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="newsletter">
+            <div class="newsletter__container">
+                <div class="newsletter__uppertext">Полезные советы и персональный предложения</div>
+                <h2 class="newsletter__title">Эксклюзивная рассылка</h2>
+                <div class="newsletter__emailform">
+                    <ul class="emailform__sidetext">
+                        <li class="sidetext icon-triangle-right">Личный менеджер</li>
+                        <li class="sidetext icon-triangle-right">Доставка и оформление</li>
+                        <li class="sidetext icon-triangle-right">Индивидуальный дизайн</li>
+                    </ul>
+                    <div class="emailform">
+                        <div class="form__wrap">
+                            <form id="formEmail" action="#" method="post" class="form__body">
+                                <input type="email" name="email" form="formEmail" class="form__input" maxlength="64" placeholder="ваш e-mail">
+                                <button type="submit" form="formEmail" class="form__button">отправить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+        <footer class="footer">
+    <div class="footer__container">
+        <div class="footer__upper">
+            <nav class="footer__links">
+                <h4 class="footer__links-title">Полезные ссылки</h4>
+                <button type="button" class="footer__menu-links-button" aria-label="Открыть полезные ссылки">
+                    <picture><source srcset="img/up-white.webp" type="image/webp"><img src="img/up-white.png" loading="lazy" alt=""></picture>
+                </button>
+                <div class="footer__menu-wrap footer-links-menu">
+                    <ul class="footer__links-items">
+                        <li class="footer__links-item">
+                            <a href="" class="footer__link">Доставка</a>
+                        </li>
+                        <li class="footer__links-item">
+                            <a href="" class="footer__link">Оплата</a>
+                        </li>
+                        <li class="footer__links-item">
+                            <a href="" class="footer__link">Акции</a>
+                        </li>
+                        <li class="footer__links-item">
+                            <a href="" class="footer__link">Политика конфиденциальности</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="footer__payment">
+                <h4 class="footer__payment-title">оплата</h4>
+                <button type="button" class="footer__menu-payment-button" aria-label="Открыть информацию об оплате">
+                    <picture><source srcset="img/up-white.webp" type="image/webp"><img src="img/up-white.png" loading="lazy" alt=""></picture>
+                </button>
+                <div class="footer__menu-wrap footer-payment-menu">
+                    <div class="footer__payment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper justo, nec, pellentesque.</div>
+                    <ul class="footer__payment-items">
+                        <li class="footer__payment-item visa-img">
+                            <picture><source srcset="img/visa.webp" type="image/webp"><img src="img/visa.png" loading="lazy" alt=""></picture>
+                        </li>
+                        <li class="footer__payment-item mastercard-img">
+                            <picture><source srcset="img/mastercard.webp" type="image/webp"><img src="img/mastercard.png" loading="lazy" alt=""></picture>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="footer__contacts">
+                <h4 class="footer__contacts-title">контакты</h4>
+                <button type="button" class="footer__menu-contact-button" aria-label="Открыть список с контактами">
+                    <picture><source srcset="img/up-white.webp" type="image/webp"><img src="img/up-white.png" loading="lazy" alt=""></picture>
+                </button>
+                <div class="footer__menu-wrap footer-contacts-menu">
+                    <ul class="footer__contacts-items">
+                        <li class="footer__contacts-item">
+                            <a href="tel:+88122345655" class="footer__contact icon-phone">8 (812) 234-56-55</a>
+                        </li>
+                        <li class="footer__contacts-item">
+                            <a href="tel:+88122345655" class="footer__contact icon-phone">8 (812) 234-56-55</a>
+                        </li>
+                        <li class="footer__contacts-item">
+                            <a href="mailto:ojjo@ojjo.ru" class="footer__email icon-mail">ojjo@ojjo.ru</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="footer__social">
+                <h4 class="footer__social-title">социальные сети</h4>
+                <button type="button" class="footer__menu-social-button" aria-label="Открыть ссылки на соц-сети">
+                    <picture><source srcset="img/up-white.webp" type="image/webp"><img src="img/up-white.png" loading="lazy" alt=""></picture>
+                </button>
+                <div class="footer__menu-wrap footer-social-menu">
+                    <div class="footer__social-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper justo, nec, pellentesque.</div>
+                    <ul class="footer__social-items">
+                        <li class="footer__social-item">
+                            <a href="" aria-label="Перейти к ютуб-каналу сайта" class="footer__social-link youtube__link icon-youtube"></a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="" aria-label="Перейти к вконтакту" class="footer__social-link vk__link icon-vk"></a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="" aria-label="Перейти к Фейсбуку" class="footer__social-link fb__link icon-facebook"></a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="" aria-label="Перейти к телеграмм" class="footer__social-link tg__link icon-telegram"></a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="" aria-label="Перейти к этси" class="footer__social-link e__link icon-etsy"></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="footer__lower">
+            <ul class="footer__lower-items">
+                <li class="footer__lower-item">(c) 2020 OJJO jewelry</li>
+                <li class="footer__lower-item">
+                    <a href="" class="footer__lower-link">Договор публичной офферты</a>
+                </li>
+                <li class="footer__lower-item">
+                    <a href="" class="footer__lower-link">Контрагентам</a>
+                </li>
+                <li class="footer__lower-item">
+                    <a href="https://www.figma.com/file/oVxRcV8M2sLcNqd5epk16k/ojjo-%2B?type=design&node-id=0-1&t=rsfbskkmSrXY2sXI-0" class="footer__lower-link figma-link">Макет сайта</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+    </div>
+    <script src="js/card.min.js?_v=20230702080944" defer></script>
+</body>
+
+</html>
