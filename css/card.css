@@ -3,7 +3,7 @@
 .header {
   background-color: #333333;
   padding-top: 2px;
-  height: 111px;
+  min-height: 111px;
 }
 
 .content__left {
@@ -160,7 +160,7 @@
 }
 
 .card__wrap {
-  max-width: 540px;
+  max-width: 33.75rem;
   border: 1px solid #D6D6D6;
   padding: 10px;
 }
@@ -269,8 +269,8 @@
 
 .textblock__text {
   position: relative;
-  max-width: 540px;
-  max-height: 240px;
+  max-width: 33.75rem;
+  max-height: 15rem;
   overflow: hidden;
   font-size: 1rem;
   line-height: 1.5;
