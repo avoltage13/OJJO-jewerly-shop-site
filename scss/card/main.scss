@@ -69,7 +69,7 @@ $maxWidthContainerRem: 69.375;
 .header {
     background-color: #333333;
     padding-top: 2px;
-    height: 111px;
+    min-height: 111px;
 }
 .content__left {
     animation: none;
@@ -220,7 +220,7 @@ $maxWidthContainerRem: 69.375;
     background-color: rgba(77, 77, 77, 0.9);
 }
 .card__wrap {
-    max-width: 540px;
+    max-width: rem(540);
     border: 1px solid #D6D6D6;
     padding: 10px;
 }
@@ -448,8 +448,8 @@ $maxWidthContainerRem: 69.375;
 }
 .textblock__text {
     position: relative;
-    max-width: 540px;
-    max-height: 240px;
+    max-width: rem(540);
+    max-height: rem(240);
     overflow: hidden;
     font-size: rem(16);
     line-height: 1.5;

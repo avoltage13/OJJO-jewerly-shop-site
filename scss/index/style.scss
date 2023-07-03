@@ -1,0 +1,125 @@
+@import "fonts";
+@import "icons";
+@import "nullstyle";
+
+// REM
+@function rem($value) {
+    $remValue: calc($value / 16) + rem;
+    @return $remValue;
+}
+// EM
+@function em($value) {
+    $emValue: calc($value / 16) + em;
+    @return $emValue;
+}
+// REM+EM w/0 rem,em
+@function rem-alt($value) {
+    $rem0Value: calc($value / 16);
+    @return $rem0Value;
+}
+
+// Adaptiv
+$maxWidth: 1920;
+$maxWidthContainer: 1110;
+$maxWidthRem: 120;
+$maxWidthContainerRem: 69.375;
+
+@mixin av($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+
+    @if $type==1 {
+    // Только если меньше контейнера
+    #{$property}: $startSize + px;
+
+    @media (max-width: #{$maxWidthContainer + px}) {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+    }
+}
+
+    @else if $type==2 {
+    // Только если больше контейнера
+    #{$property}: $startSize + px;
+
+    @media (min-width: #{$maxWidthContainer + px}) {
+    #{$property}: calc(#{$minSize + px} #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+}
+
+    @else if $type==1r {
+    // Только если меньше контейнера
+    #{$property}: $startSize + rem;
+
+    @media (max-width: #{$maxWidthContainer + px}) {
+    #{$property}: calc(#{$minSize + rem} + #{$addSize} * ((100vw - 20rem) / #{$maxWidthContainerRem - 20}));
+    }
+}
+
+    @else if $type==2r {
+    // Только если больше контейнера
+    #{$property}: $startSize + rem;
+
+    @media (min-width: #{$maxWidthContainer + px}) {
+    #{$property}: calc(#{$minSize + rem} #{$addSize} * ((100vw - 20rem) / #{$maxWidthRem - 20}));
+    }
+}
+
+    @else {
+    // Всегда
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+}
+/*______________BASE SCSS______________*/
+
+body {
+    font-family: Gilroy;
+    overflow-x: hidden;
+}
+body.noscroll {
+    overflow: hidden;
+}
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
+}
+.background {
+    position: relative;
+    //display: flex;
+}
+.background__body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    img, picture {
+        @include av(min-height,1100,650,1);
+        transform: translateY(calc(1px - 274 *((100vw - 320px) / 2560)));
+        overflow: visible;
+        object-fit: cover;
+    }
+    &::before {
+        content:"";
+        background-color: rgba(51, 51, 51, 0.87);
+        height: 150%;
+        width: 100%;
+        position: absolute;
+        z-index: 2;
+        padding-top: 75%;
+    }
+}
+[class*=__container] {
+    max-width: rem(1140);
+    margin: 0 auto;
+    padding: 0 15px;
+    z-index: 2;
+}
+[class*=__button] {
+    background-color: transparent;
+}
+@import "itc-slider";
+@import "side-menu";
+@import "popup";
+@import "header";
+// @import "main";
+@import "footer";
