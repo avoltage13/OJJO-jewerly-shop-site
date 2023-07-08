@@ -8,7 +8,10 @@
 
 Design was taken from a free source and used for practicing HTML layout, as well as for a small practice in JavaScript.
 The website was created using tools like Gulp, Webpack, and SASS for development purposes.
-Site link [OJJO](https://avoltage13.github.io/OJJO-jewerly-shop-site/)
+
+**Site link [OJJO](https://avoltage13.github.io/OJJO-jewerly-shop-site/)**
+
+For empty links used ___preventDefault()___
 
 ## Features
 
