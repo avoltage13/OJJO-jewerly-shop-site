@@ -8,14 +8,12 @@
 
 Design was taken from a free source and used for practicing HTML layout, as well as for a small practice in JavaScript.
 The website was created using tools like Gulp, Webpack, and SASS for development purposes.
+- [Figma](https://www.figma.com/file/oVxRcV8M2sLcNqd5epk16k/ojjo-%2B?type=design&mode=design)
 
-**Site link [OJJO](https://avoltage13.github.io/OJJO-jewerly-shop-site/)**
-
-[Catalog.html](https://avoltage13.github.io/OJJO-jewerly-shop-site/catalog.html)
-
-[Card.html](https://avoltage13.github.io/OJJO-jewerly-shop-site/card.html)
-
-[Contacts.html](https://avoltage13.github.io/OJJO-jewerly-shop-site/contacts.html)
+- **Site link [OJJO](https://avoltage13.github.io/OJJO-jewerly-shop-site/)**
+- [Catalog.html](https://avoltage13.github.io/OJJO-jewerly-shop-site/catalog.html)
+- [Card.html](https://avoltage13.github.io/OJJO-jewerly-shop-site/card.html)
+- [Contacts.html](https://avoltage13.github.io/OJJO-jewerly-shop-site/contacts.html)
 
 For empty links used ___preventDefault()___
 
