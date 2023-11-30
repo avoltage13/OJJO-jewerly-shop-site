@@ -11,6 +11,12 @@ The website was created using tools like Gulp, Webpack, and SASS for development
 
 **Site link [OJJO](https://avoltage13.github.io/OJJO-jewerly-shop-site/)**
 
+[Catalog.html](https://avoltage13.github.io/OJJO-jewerly-shop-site/catalog.html)
+
+[Card.html](https://avoltage13.github.io/OJJO-jewerly-shop-site/card.html)
+
+[Contacts.html](https://avoltage13.github.io/OJJO-jewerly-shop-site/contacts.html)
+
 For empty links used ___preventDefault()___
 
 ## Features
